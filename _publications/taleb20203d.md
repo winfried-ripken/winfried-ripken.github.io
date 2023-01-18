@@ -3,7 +3,7 @@ title: "3D Self-Supervised Methods for Medical Imaging"
 collection: publications
 permalink: /publication/taleb20203d
 excerpt: '.'
-date: 2020
+date: 2020-12-06
 venue: 'Advances in Neural Information Processing Systems'
 paperurl: 'https://proceedings.neurips.cc/paper/2020/file/d2dc6368837861b42020ee72b0896182-Paper.pdf'
 citation: 'Taleb, A., Loetzsch, W., Danz, N., Severin, J., Gaertner, T., Bergner, B., & Lippert, C. (2020). 3d self-supervised methods for medical imaging. Advances in Neural Information Processing Systems, 33, 18158-18172.'
