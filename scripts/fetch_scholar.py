@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
+import argparse
 import datetime as dt
 import json
 import re
 import sys
+import time
+import traceback
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 import yaml
-from scholarly import scholarly
+from scholarly import ProxyGenerator, scholarly
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_PATH = ROOT / "_config.yml"
@@ -57,6 +60,18 @@ def scholar_url_for_pub(user_id: str, pub: dict) -> str:
     return ""
 
 
+def configure_proxy(debug: bool) -> None:
+    """Try free rotating proxies because GitHub Actions IPs are often blocked by Scholar."""
+    pg = ProxyGenerator()
+    proxy_ok = pg.FreeProxies(timeout=10, wait_time=120)
+    if proxy_ok:
+        scholarly.use_proxy(pg)
+        if debug:
+            print("Proxy enabled via ProxyGenerator.FreeProxies")
+    elif debug:
+        print("Proxy setup failed; continuing without proxy")
+
+
 def fetch_publications(user_id: str) -> list:
     author = scholarly.search_author_id(user_id)
     author = scholarly.fill(author, sections=["publications"])
@@ -85,6 +100,26 @@ def fetch_publications(user_id: str) -> list:
     return result
 
 
+def fetch_with_retries(user_id: str, attempts: int, debug: bool) -> list:
+    last_error = None
+    for attempt in range(1, attempts + 1):
+        try:
+            if debug:
+                print(f"Fetch attempt {attempt}/{attempts}")
+            return fetch_publications(user_id)
+        except Exception as exc:  # noqa: BLE001
+            last_error = exc
+            if debug:
+                print(f"Attempt {attempt} failed: {exc}")
+                traceback.print_exc()
+            if attempt < attempts:
+                time.sleep(min(8 * attempt, 20))
+
+    if last_error is not None:
+        raise last_error
+    raise RuntimeError("Unknown fetch failure")
+
+
 def load_config() -> dict:
     return yaml.safe_load(CONFIG_PATH.read_text(encoding="utf-8")) or {}
 
@@ -95,9 +130,10 @@ def load_existing() -> dict:
     return json.loads(OUTPUT_PATH.read_text(encoding="utf-8"))
 
 
-def write_output(items: list):
+def write_output(items: list, note: str | None = None):
     payload = {
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
+        "note": note,
         "items": items,
     }
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -105,18 +141,35 @@ def write_output(items: list):
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description="Fetch publications from Google Scholar")
+    parser.add_argument("--debug", action="store_true", help="Print traceback details for fetch failures")
+    parser.add_argument(
+        "--strict",
+        action="store_true",
+        help="Fail with non-zero exit if Scholar is unavailable and no cache exists",
+    )
+    parser.add_argument("--attempts", type=int, default=3, help="Number of retry attempts (default: 3)")
+    args = parser.parse_args()
+
     config = load_config()
     user_id = extract_user_id(config)
 
+    configure_proxy(debug=args.debug)
+
     try:
-        items = fetch_publications(user_id)
+        items = fetch_with_retries(user_id=user_id, attempts=max(1, args.attempts), debug=args.debug)
     except Exception as exc:  # noqa: BLE001
         existing = load_existing()
         if existing.get("items"):
             print(f"Scholar fetch failed, keeping existing cache: {exc}")
             return 0
-        print(f"Scholar fetch failed and no cache exists: {exc}", file=sys.stderr)
-        return 1
+
+        message = f"Scholar fetch failed on cold start: {exc}"
+        write_output(items=[], note=message)
+        print(message)
+        if args.strict:
+            return 1
+        return 0
 
     write_output(items)
     print(f"Wrote {len(items)} publications for user {user_id} to {OUTPUT_PATH}")
