@@ -53,7 +53,20 @@ title: Home
             <h3 class="year-heading">{{ group.name }}</h3>
             <div class="pub-list">
               {% for pub in group.items %}
-          {% assign authors = pub.authors | default: "Unknown authors" %}
+          {% assign authors_raw = pub.authors | default: "Unknown authors" %}
+          {% assign author_list = authors_raw | split: " and " %}
+          {% capture authors %}
+            {%- for author in author_list -%}
+              {%- if forloop.first -%}
+                {{- author -}}
+              {%- elsif forloop.last -%}
+                AND {{- author -}}
+              {%- else -%}
+                , {{- author -}}
+              {%- endif -%}
+            {%- endfor -%}
+          {% endcapture %}
+          {% assign authors = authors | strip %}
           {% assign authors = authors
             | replace: "Winfried Lötzsch", "<span class='author-highlight'>Winfried Lötzsch</span>"
             | replace: "Winfried Loetzsch", "<span class='author-highlight'>Winfried Loetzsch</span>"
