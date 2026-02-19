@@ -1,48 +1,46 @@
 # winfried-ripken.github.io
 
-Personal academic website built with Jekyll and hosted on GitHub Pages.
+Minimal academic website built with Jekyll and hosted on GitHub Pages.
 
-## Main features
+## Repository structure
 
-- Modern single-page homepage (`index.md`)
-- Publication list rendered from `_data/publications.json`
-- Automatic Google Scholar sync via GitHub Actions (`.github/workflows/update-publications.yml`)
+- `index.md`: homepage content
+- `_layouts/default.html`: single layout
+- `assets/css/site.css`: site styling
+- `_data/publications.json`: cached publication data rendered on homepage
+- `scripts/fetch_scholar.py`: Scholar fetch implementation
+- `scripts/run_publications_sync.py`: shared local/CI sync entrypoint
+- `.github/workflows/update-publications.yml`: weekly/manual publication sync
 
 ## Publication sync
 
-The shared sync entrypoint (used by both local runs and GitHub Actions) is:
-
-- `scripts/run_publications_sync.py`
-
-Internally it calls `scripts/fetch_scholar.py` so both paths use the exact same fetch logic.
-
-It reads your Scholar profile id from `_config.yml`:
+The Scholar profile id is configured in `_config.yml`:
 
 ```yml
 scholar:
   user_id: "wAVKdLcAAAAJ"
 ```
 
-Workflow behavior:
-
-- Runs weekly (Monday, 03:17 UTC)
-- Can also be triggered manually from GitHub Actions (`workflow_dispatch`)
-- Updates `_data/publications.json` and commits changes automatically
-
-### Test publication sync locally
+### Local test
 
 ```bash
 python3 -m pip install -r scripts/requirements-publications.txt
 python3 scripts/run_publications_sync.py --debug --attempts 3
 ```
 
-If proxy setup is problematic on your machine, run:
+If proxy setup causes issues:
 
 ```bash
 python3 scripts/run_publications_sync.py --debug --attempts 3 --no-proxy
 ```
 
-## Local run
+### GitHub Actions
+
+- Workflow: `.github/workflows/update-publications.yml`
+- Runs weekly and on manual trigger
+- Commits changes to `_data/publications.json` automatically
+
+## Local site preview
 
 ```bash
 bundle install

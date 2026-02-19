@@ -29,6 +29,5 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
-  - markdown_generator
-  - talkmap.py
-  - talkmap.ipynb
+  - scripts
+  - .github
