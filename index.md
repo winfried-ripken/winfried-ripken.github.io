@@ -24,7 +24,7 @@ title: Home
         </div>
       </div>
       <figure class="profile-frame">
-        <img src="{{ '/assets/profil.webp' | relative_url }}" alt="Portrait of {{ site.author.name }}">
+        <img src="{{ '/assets/profil.webp' | relative_url }}" alt="Portrait of {{ site.author.name }}" width="100" height="133">
       </figure>
     </div>
   </div>
@@ -45,16 +45,14 @@ title: Home
     </div>
 
     {% assign pubs = site.data.publications.items | sort: "year" | reverse %}
+    {% assign pub_groups = pubs | group_by: "year" %}
     {% if pubs and pubs.size > 0 %}
-      <div class="pub-list">
-        {% assign current_year = "" %}
-        {% for pub in pubs %}
-          {% assign pub_year = pub.year | default: 0 %}
-          {% if pub_year != current_year %}
-            {% assign current_year = pub_year %}
-            <h3 class="year-heading">{{ current_year }}</h3>
-          {% endif %}
-
+      <div class="pub-groups">
+        {% for group in pub_groups %}
+          <div class="year-block">
+            <h3 class="year-heading">{{ group.name }}</h3>
+            <div class="pub-list">
+              {% for pub in group.items %}
           {% assign authors = pub.authors | default: "Unknown authors" %}
           {% assign authors = authors
             | replace: "Winfried Lötzsch", "<span class='author-highlight'>Winfried Lötzsch</span>"
@@ -62,21 +60,21 @@ title: Home
             | replace: "Winfried Ripken", "<span class='author-highlight'>Winfried Ripken</span>"
           %}
 
-          <article class="pub-item">
-            <p class="pub-authors">{{ authors }}</p>
-            <h4 class="pub-title">
+              <article class="pub-item">
+                <h4 class="pub-title">
               {% if pub.url %}
                 <a href="{{ pub.url }}">{{ pub.title }}</a>
               {% else %}
                 {{ pub.title }}
               {% endif %}
-            </h4>
-            <div class="pub-meta-grid">
-              <p><span class="meta-label">Venue</span> {{ pub.venue | default: "Unknown venue" }}</p>
-              <p><span class="meta-label">Year</span> {{ pub_year }}</p>
-              <p><span class="meta-label">Citations</span> {{ pub.citations | default: 0 }}</p>
+                </h4>
+                <p class="pub-authors">{{ authors }}</p>
+                <p class="pub-venue">{{ pub.venue | default: "Unknown venue" }}:</p>
+                <p class="pub-cites">Citations: {{ pub.citations | default: 0 }}</p>
+              </article>
+              {% endfor %}
             </div>
-          </article>
+          </div>
         {% endfor %}
       </div>
     {% else %}
