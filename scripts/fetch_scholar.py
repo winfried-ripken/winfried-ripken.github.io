@@ -141,22 +141,22 @@ def write_output(items: list, note: str | None = None):
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Fetch publications from Google Scholar")
-    parser.add_argument("--debug", action="store_true", help="Print traceback details for fetch failures")
-    parser.add_argument(
-        "--strict",
-        action="store_true",
-        help="Fail with non-zero exit if Scholar is unavailable and no cache exists",
-    )
-    parser.add_argument("--attempts", type=int, default=3, help="Number of retry attempts (default: 3)")
-    args = parser.parse_args()
-
-    config = load_config()
-    user_id = extract_user_id(config)
-
-    configure_proxy(debug=args.debug)
-
     try:
+        parser = argparse.ArgumentParser(description="Fetch publications from Google Scholar")
+        parser.add_argument("--debug", action="store_true", help="Print traceback details for fetch failures")
+        parser.add_argument(
+            "--strict",
+            action="store_true",
+            help="Fail with non-zero exit if Scholar is unavailable and no cache exists",
+        )
+        parser.add_argument("--attempts", type=int, default=3, help="Number of retry attempts (default: 3)")
+        args = parser.parse_args()
+
+        config = load_config()
+        user_id = extract_user_id(config)
+
+        configure_proxy(debug=args.debug)
+
         items = fetch_with_retries(user_id=user_id, attempts=max(1, args.attempts), debug=args.debug)
     except Exception as exc:  # noqa: BLE001
         existing = load_existing()
