@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-19T20:46:18.057837+00:00",
+  "generated_at": "2026-02-19T22:06:51.020330+00:00",
   "note": null,
   "items": [
     {
@@ -13,7 +13,7 @@
     {
       "title": "Sampling 3D Molecular Conformers with Diffusion Transformers",
       "authors": "J Thorben Frank* and Winfried Ripken* and Gregor Lied* and Klaus-Robert Müller and Oliver T Unke and Stefan Chmiela",
-      "venue": "",
+      "venue": "Proceedings of NeurIPS 2025",
       "year": 2025,
       "citations": 0,
       "url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250615378T/abstract"
@@ -45,15 +45,15 @@
     {
       "title": "Curve Your Enthusiasm: Concurvity Regularization in Differentiable Generalized Additive Models",
       "authors": "Julien Siems* and Konstantin Ditschuneit* and Winfried Ripken* and Alma Lindborg* and Maximilian Schambach and Johannes S Otterbach and Martin Genzel",
-      "venue": "",
+      "venue": "Proceedings of NeurIPS 2023",
       "year": 2023,
-      "citations": 19,
+      "citations": 20,
       "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/3c6696d70d364337cf98dcb7c652a770-Abstract-Conference.html"
     },
     {
       "title": "Multiscale Neural Operators for Solving Time-Independent PDEs",
       "authors": "Winfried Ripken* and Lisa Coiffard* and Felix Pieper* and Sebastian Dziadzio",
-      "venue": "",
+      "venue": "NeurIPS 2023 Workshop on the Symbiosis of Deep Learning and Differential Equations III",
       "year": 2023,
       "citations": 8,
       "url": "https://arxiv.org/abs/2311.05964"
@@ -69,9 +69,9 @@
     {
       "title": "Learning the Solution Operator of Boundary Value Problems using Graph Neural Networks",
       "authors": "Winfried Lötzsch and Simon Ohler and Johannes Otterbach",
-      "venue": "",
+      "venue": "ICML 2022 2nd AI for Science Workshop",
       "year": 2022,
-      "citations": 27,
+      "citations": 28,
       "url": "https://arxiv.org/abs/2206.14092"
     },
     {
@@ -85,7 +85,7 @@
     {
       "title": "Learning languages with decidable hypotheses",
       "authors": "Julian Berger and Maximilian Böther and Vanja Doskoč and Jonathan Gadea Harder and Nicolas Klodt and Timo Kötzing and Winfried Lötzsch and Jannik Peters and Leon Schiller and Lars Seifert and Armin Wells and Simon Wietheger",
-      "venue": "Springer International Publishing",
+      "venue": "Connecting with Computability: 17th Conference on Computability in Europe, CiE 2021, Virtual Event, Ghent, July 5–9, 2021, Proceedings 17",
       "year": 2021,
       "citations": 1,
       "url": "https://link.springer.com/chapter/10.1007/978-3-030-80049-9_3"
@@ -125,7 +125,7 @@
     {
       "title": "Who wrote the web? Revisiting influential author identification research applicable to information retrieval",
       "authors": "Martin Potthast and Sarah Braun and Tolga Buz and Fabian Duffhauss and Florian Friedrich and Jörg Marvin Gülzow and Jakob Köhler and Winfried Lötzsch and Fabian Müller and Maike Elisa Müller and Robert Paßmann and Bernhard Reinke and Lucas Rettenmeier and Thomas Rometsch and Timo Sommer and Michael Träger and Sebastian Wilhelm and Benno Stein and Efstathios Stamatatos and Matthias Hagen",
-      "venue": "Springer International Publishing",
+      "venue": "Advances in Information Retrieval: 38th European Conference on IR Research, ECIR 2016, Padua, Italy, March 20–23, 2016. Proceedings 38",
       "year": 2016,
       "citations": 79,
       "url": "https://link.springer.com/chapter/10.1007/978-3-319-30671-1_29"
@@ -133,8 +133,8 @@
     {
       "title": "Towards Learning Self-Organized Criticality of Rydberg Atoms using Graph Neural Networks",
       "authors": "Simon Ohler and Daniel Steven Brady and Winfried Lötzsch and Michael Fleischhauer and Johannes Otterbach",
-      "venue": "",
-      "year": 2025,
+      "venue": "ICML 2022 2nd AI for Science Workshop",
+      "year": 0,
       "citations": 1,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=wAVKdLcAAAAJ&citation_for_view=wAVKdLcAAAAJ:ZeXyd9-uunAC"
     }

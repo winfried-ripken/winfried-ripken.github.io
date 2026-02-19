@@ -53,6 +53,48 @@ def normalize_year(raw_year):
     return int(match.group(0))
 
 
+def clean_citation_for_venue(citation: str) -> str:
+    text = citation.strip()
+    if not text:
+        return ""
+
+    # Scholar often appends year at the end: "Venue Name, 2023"
+    text = re.sub(r"[,;\s]*\b\d{4}\b\s*$", "", text).strip(" ,;")
+    # Some entries prefix citations count: "Cited by 12 Related articles ..."
+    if text.lower().startswith("cited by "):
+        return ""
+    return text
+
+
+def extract_venue(bib: dict, pub_obj: dict, pub: dict) -> str:
+    venue_keys = (
+        "journal",
+        "booktitle",
+        "conference",
+        "publication",
+        "publisher",
+        "series",
+        "school",
+        "institution",
+        "venue",
+    )
+    for key in venue_keys:
+        value = bib.get(key)
+        if value and str(value).strip():
+            return str(value).strip()
+
+    # Fallback for truncated Scholar records where venue appears in citation text.
+    citation = (
+        bib.get("citation")
+        or pub_obj.get("citation")
+        or pub.get("citation")
+        or pub_obj.get("bib", {}).get("citation")
+        or pub.get("bib", {}).get("citation")
+        or ""
+    )
+    return clean_citation_for_venue(str(citation))
+
+
 def scholar_url_for_pub(user_id: str, pub: dict) -> str:
     for key in ("pub_url", "eprint_url", "url_scholarbib"):
         value = pub.get(key)
@@ -160,7 +202,7 @@ def fetch_publications(user_id: str, author_name: str, debug: bool) -> list:
         if not title:
             continue
 
-        venue = bib.get("journal") or bib.get("booktitle") or bib.get("publisher") or ""
+        venue = extract_venue(bib=bib, pub_obj=pub_obj, pub=pub)
 
         item = {
             "title": title,

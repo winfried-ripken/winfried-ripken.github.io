@@ -72,7 +72,7 @@ title: Home
               {% endif %}
                 </h4>
                 <p class="pub-authors">{{ authors }}</p>
-                <p class="pub-venue">{{ pub.venue | default: "Unknown venue" }}:</p>
+                <p class="pub-venue">{{ pub.venue | default: "Unknown venue" }}</p>
                 <p class="pub-cites">Citations: {{ pub.citations | default: 0 }}</p>
               </article>
               {% endfor %}
