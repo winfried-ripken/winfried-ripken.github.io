@@ -167,10 +167,11 @@ h2 {
 }
 
 .pub-item {
+  position: relative;
   border: 1px solid #dbe3ee;
   background: #fbfdff;
   border-radius: 14px;
-  padding: 15px 16px;
+  padding: 15px 16px 34px;
   box-shadow: 0 4px 14px rgba(22, 47, 83, 0.06);
 }
 
@@ -193,6 +194,15 @@ h2 {
   margin: 6px 0 0;
   font-size: 1.05rem;
   line-height: 1.35;
+}
+
+.pub-cites {
+  position: absolute;
+  right: 14px;
+  bottom: 10px;
+  margin: 0;
+  font-size: 0.8rem;
+  color: #7a8796;
 }
 
 .pub-meta-grid {

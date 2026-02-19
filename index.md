@@ -11,7 +11,7 @@ title: Home
         <h1>{{ site.author.name }}</h1>
         <p class="subtitle">{{ site.author.role }} · {{ site.author.affiliation }}</p>
         <p class="lead">
-          I am a PhD student within the <a href="https://www.bifold.berlin/research/workgroups/view/workgroups-detail/machine-learning-for-molecular-simulation-in-quantum-chemistry">BIFOLD graduate school</a> advised by Stefan Chmiela and Klaus-Robert Müller. I am passionate about applying advances in machine learning to problems in the natural sciences, especially for molecular simulation.
+          I am a PhD student within the <a href="https://www.bifold.berlin/people/winfried-ripken.html">BIFOLD graduate school</a> advised by Stefan Chmiela and Klaus-Robert Müller. I am passionate about applying advances in machine learning to problems in the natural sciences, especially for molecular simulation.
           Before this, I worked as a full-time machine learning researcher at
           <a href="https://merantix-momentum.com/">Merantix Momentum</a>.
         </p>
@@ -20,6 +20,9 @@ title: Home
           <a class="button button--ghost" href="https://github.com/{{ site.author.github }}">GitHub</a>
           {% if site.author.twitter %}
           <a class="button button--ghost" href="https://x.com/{{ site.author.twitter }}">X/Twitter</a>
+          {% endif %}
+          {% if site.author.linkedin %}
+          <a class="button button--ghost" href="{{ site.author.linkedin }}">LinkedIn</a>
           {% endif %}
         </div>
       </div>
@@ -73,7 +76,7 @@ title: Home
                 </h4>
                 <p class="pub-authors">{{ authors }}</p>
                 <p class="pub-venue">{{ pub.venue | default: "Unknown venue" }}</p>
-                <p class="pub-cites">Citations: {{ pub.citations | default: 0 }}</p>
+                <p class="pub-cites">{{ pub.citations | default: 0 }} citations</p>
               </article>
               {% endfor %}
             </div>
