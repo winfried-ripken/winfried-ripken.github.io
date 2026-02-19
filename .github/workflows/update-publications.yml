@@ -25,7 +25,7 @@ jobs:
         run: pip install -r scripts/requirements-publications.txt
 
       - name: Fetch publications from Google Scholar
-        run: python scripts/fetch_scholar.py --debug --attempts 3
+        run: python scripts/run_publications_sync.py --debug --attempts 3
 
       - name: Commit updated cache
         run: |

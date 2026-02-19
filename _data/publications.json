@@ -1,4 +1,142 @@
 {
-  "generated_at": null,
-  "items": []
+  "generated_at": "2026-02-19T20:46:18.057837+00:00",
+  "note": null,
+  "items": [
+    {
+      "title": "Learning Hamiltonian Flow Maps: Mean Flow Consistency for Large-Timestep Molecular Dynamics",
+      "authors": "Winfried Ripken and Michael Plainer and Gregor Lied and Thorben Frank and Oliver T Unke and Stefan Chmiela and Frank Noé and Klaus Robert Müller",
+      "venue": "arXiv preprint arXiv:2601.22123",
+      "year": 2026,
+      "citations": 0,
+      "url": "https://arxiv.org/abs/2601.22123"
+    },
+    {
+      "title": "Sampling 3D Molecular Conformers with Diffusion Transformers",
+      "authors": "J Thorben Frank* and Winfried Ripken* and Gregor Lied* and Klaus-Robert Müller and Oliver T Unke and Stefan Chmiela",
+      "venue": "",
+      "year": 2025,
+      "citations": 0,
+      "url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250615378T/abstract"
+    },
+    {
+      "title": "Nonequilibrium universality of Rydberg-excitation spreading on a dynamic network",
+      "authors": "Simon Ohler and Daniel Brady and Patrick Mischke and Jana Bender and Herwig Ott and Thomas Niederprüm and Winfried Ripken and Johannes S Otterbach and Michael Fleischhauer",
+      "venue": "Physical Review Research",
+      "year": 2025,
+      "citations": 0,
+      "url": "https://link.aps.org/doi/10.1103/8rlg-169g"
+    },
+    {
+      "title": "Enhancing Diffusion Models Efficiency by Disentangling Total-Variance and Signal-to-Noise Ratio",
+      "authors": "Khaled Kahouli and Winfried Ripken and Stefan Gugler and Oliver T Unke and Klaus-Robert Müller and Shinichi Nakajima",
+      "venue": "arXiv preprint arXiv:2502.08598",
+      "year": 2025,
+      "citations": 0,
+      "url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250208598K/abstract"
+    },
+    {
+      "title": "Enhancing Multi-Objective Optimization through Machine Learning-Supported Multiphysics Simulation",
+      "authors": "Diego Botache and Jens Decke and Winfried Ripken and Abhinay Dornipati and Franz Götz-Hahn and Mohamed Ayeb and Bernhard Sick",
+      "venue": "Proceedings of ECML 2024",
+      "year": 2024,
+      "citations": 12,
+      "url": "https://link.springer.com/chapter/10.1007/978-3-031-70381-2_19"
+    },
+    {
+      "title": "Curve Your Enthusiasm: Concurvity Regularization in Differentiable Generalized Additive Models",
+      "authors": "Julien Siems* and Konstantin Ditschuneit* and Winfried Ripken* and Alma Lindborg* and Maximilian Schambach and Johannes S Otterbach and Martin Genzel",
+      "venue": "",
+      "year": 2023,
+      "citations": 19,
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/3c6696d70d364337cf98dcb7c652a770-Abstract-Conference.html"
+    },
+    {
+      "title": "Multiscale Neural Operators for Solving Time-Independent PDEs",
+      "authors": "Winfried Ripken* and Lisa Coiffard* and Felix Pieper* and Sebastian Dziadzio",
+      "venue": "",
+      "year": 2023,
+      "citations": 8,
+      "url": "https://arxiv.org/abs/2311.05964"
+    },
+    {
+      "title": "Simulating the Temperature-Dependent Absorbing-State Phase Transition in a Rydberg Many-Body Facilitated Gas using Neural Networks",
+      "authors": "Simon Ohler and Daniel Brady and Winfried Ripken and Michael Fleischhauer and Johannes Otterbach",
+      "venue": "APS Division of Atomic, Molecular and Optical Physics Meeting Abstracts",
+      "year": 2023,
+      "citations": 0,
+      "url": "https://ui.adsabs.harvard.edu/abs/2023APS..DMPN01114O/abstract"
+    },
+    {
+      "title": "Learning the Solution Operator of Boundary Value Problems using Graph Neural Networks",
+      "authors": "Winfried Lötzsch and Simon Ohler and Johannes Otterbach",
+      "venue": "",
+      "year": 2022,
+      "citations": 27,
+      "url": "https://arxiv.org/abs/2206.14092"
+    },
+    {
+      "title": "WISE: Whitebox Image Stylization by Example-Based Learning",
+      "authors": "Winfried Lötzsch and Max Reimann and Martin Büssemeyer and Amir Semmo and Jürgen Döllner and Matthias Trapp",
+      "venue": "Springer Nature Switzerland",
+      "year": 2022,
+      "citations": 6,
+      "url": "https://link.springer.com/chapter/10.1007/978-3-031-19790-1_9"
+    },
+    {
+      "title": "Learning languages with decidable hypotheses",
+      "authors": "Julian Berger and Maximilian Böther and Vanja Doskoč and Jonathan Gadea Harder and Nicolas Klodt and Timo Kötzing and Winfried Lötzsch and Jannik Peters and Leon Schiller and Lars Seifert and Armin Wells and Simon Wietheger",
+      "venue": "Springer International Publishing",
+      "year": 2021,
+      "citations": 1,
+      "url": "https://link.springer.com/chapter/10.1007/978-3-030-80049-9_3"
+    },
+    {
+      "title": "3D Self-Supervised Methods for Medical Imaging",
+      "authors": "Aiham Taleb and Winfried Loetzsch and Noel Danz and Julius Severin and Thomas Gaertner and Benjamin Bergner and Christoph Lippert",
+      "venue": "Proceedings of NeurIPS 2020",
+      "year": 2020,
+      "citations": 331,
+      "url": "https://proceedings.neurips.cc/paper/2020/hash/d2dc6368837861b42020ee72b0896182-Abstract.html"
+    },
+    {
+      "title": "Maps for Learning Indexable Classes",
+      "authors": "Julian Berger and Maximilian Böther and Vanja Doskoč and Jonathan Gadea Harder and Nicolas Klodt and Timo Kötzing and Winfried Lötzsch and Jannik Peters and Leon Schiller and Lars Seifert and Armin Wells and Simon Wietheger",
+      "venue": "arXiv preprint arXiv:2010.09460",
+      "year": 2020,
+      "citations": 0,
+      "url": "https://arxiv.org/abs/2010.09460"
+    },
+    {
+      "title": "Using Deep Reinforcement Learning for the Continuous Control of Robotic Arms",
+      "authors": "Winfried Lötzsch",
+      "venue": "TU Chemnitz",
+      "year": 2018,
+      "citations": 5,
+      "url": "https://arxiv.org/abs/1810.06746"
+    },
+    {
+      "title": "Training a deep policy gradient-based neural network with asynchronous learners on a simulated robotic problem",
+      "authors": "Winfried Lötzsch and Julien Vitay and Fred Hamker",
+      "venue": "INFORMATIK 2017",
+      "year": 2017,
+      "citations": 1,
+      "url": "https://drive.google.com/file/d/1bUAkRQi4tpoYDnJHelstMOg7o-j7OgWC/view"
+    },
+    {
+      "title": "Who wrote the web? Revisiting influential author identification research applicable to information retrieval",
+      "authors": "Martin Potthast and Sarah Braun and Tolga Buz and Fabian Duffhauss and Florian Friedrich and Jörg Marvin Gülzow and Jakob Köhler and Winfried Lötzsch and Fabian Müller and Maike Elisa Müller and Robert Paßmann and Bernhard Reinke and Lucas Rettenmeier and Thomas Rometsch and Timo Sommer and Michael Träger and Sebastian Wilhelm and Benno Stein and Efstathios Stamatatos and Matthias Hagen",
+      "venue": "Springer International Publishing",
+      "year": 2016,
+      "citations": 79,
+      "url": "https://link.springer.com/chapter/10.1007/978-3-319-30671-1_29"
+    },
+    {
+      "title": "Towards Learning Self-Organized Criticality of Rydberg Atoms using Graph Neural Networks",
+      "authors": "Simon Ohler and Daniel Steven Brady and Winfried Lötzsch and Michael Fleischhauer and Johannes Otterbach",
+      "venue": "",
+      "year": 0,
+      "citations": 1,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=wAVKdLcAAAAJ&citation_for_view=wAVKdLcAAAAJ:ZeXyd9-uunAC"
+    }
+  ]
 }

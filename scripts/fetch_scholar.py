@@ -17,6 +17,14 @@ CONFIG_PATH = ROOT / "_config.yml"
 OUTPUT_PATH = ROOT / "_data" / "publications.json"
 
 
+def extract_author_name(config: dict) -> str:
+    author_cfg = config.get("author") or {}
+    name = author_cfg.get("name")
+    if name:
+        return str(name)
+    return ""
+
+
 def extract_user_id(config: dict) -> str:
     scholar_cfg = config.get("scholar") or {}
     user_id = scholar_cfg.get("user_id")
@@ -60,25 +68,93 @@ def scholar_url_for_pub(user_id: str, pub: dict) -> str:
     return ""
 
 
-def configure_proxy(debug: bool) -> None:
+def configure_proxy(debug: bool, use_proxy: bool = True) -> None:
     """Try free rotating proxies because GitHub Actions IPs are often blocked by Scholar."""
+    if not use_proxy:
+        if debug:
+            print("Proxy setup disabled by flag")
+        return
+
     pg = ProxyGenerator()
-    proxy_ok = pg.FreeProxies(timeout=10, wait_time=120)
+    try:
+        proxy_ok = pg.FreeProxies(timeout=10, wait_time=120)
+    except TypeError as exc:
+        if debug:
+            print(f"Proxy setup failed with compatibility error: {exc}")
+        return
+    except Exception as exc:  # noqa: BLE001
+        if debug:
+            print(f"Proxy setup failed with unexpected error: {exc}")
+        return
+
     if proxy_ok:
         scholarly.use_proxy(pg)
         if debug:
             print("Proxy enabled via ProxyGenerator.FreeProxies")
-    elif debug:
+        return
+
+    if debug:
         print("Proxy setup failed; continuing without proxy")
 
 
-def fetch_publications(user_id: str) -> list:
-    author = scholarly.search_author_id(user_id)
-    author = scholarly.fill(author, sections=["publications"])
+def get_author_by_name_fallback(author_name: str, user_id: str, debug: bool) -> dict | None:
+    if not author_name:
+        return None
+
+    if debug:
+        print(f"Trying fallback author lookup by name: {author_name}")
+
+    try:
+        query = scholarly.search_author(author_name)
+        for _ in range(15):
+            candidate = next(query)
+            if candidate.get("scholar_id") == user_id:
+                if debug:
+                    print("Fallback lookup found matching scholar_id")
+                return candidate
+    except StopIteration:
+        return None
+    except Exception as exc:  # noqa: BLE001
+        if debug:
+            print(f"Fallback author lookup failed: {exc}")
+        return None
+
+    return None
+
+
+def get_author_record(user_id: str, author_name: str, debug: bool) -> dict:
+    try:
+        author = scholarly.search_author_id(user_id)
+        return scholarly.fill(author, sections=["publications"])
+    except AttributeError as exc:
+        # scholarly sometimes raises this when Google returns a block/captcha page
+        if debug:
+            print(f"Direct author lookup failed with AttributeError: {exc}")
+    except Exception as exc:  # noqa: BLE001
+        if debug:
+            print(f"Direct author lookup failed: {exc}")
+
+    fallback = get_author_by_name_fallback(author_name=author_name, user_id=user_id, debug=debug)
+    if fallback is None:
+        raise RuntimeError("Could not resolve author record from Google Scholar")
+    return scholarly.fill(fallback, sections=["publications"])
+
+
+def fetch_publications(user_id: str, author_name: str, debug: bool) -> list:
+    author = get_author_record(user_id=user_id, author_name=author_name, debug=debug)
 
     result = []
     for pub in author.get("publications", []):
-        bib = pub.get("bib", {})
+        detailed_pub = pub
+        try:
+            detailed_pub = scholarly.fill(pub)
+        except Exception as exc:  # noqa: BLE001
+            if debug:
+                print(f"Publication detail fetch failed for one item: {exc}")
+
+        bib = detailed_pub.get("bib", {}) if isinstance(detailed_pub, dict) else {}
+        pub_obj = detailed_pub if isinstance(detailed_pub, dict) else pub
+
         year = normalize_year(bib.get("pub_year") or bib.get("year"))
         title = (bib.get("title") or "").strip()
         if not title:
@@ -91,8 +167,8 @@ def fetch_publications(user_id: str) -> list:
             "authors": (bib.get("author") or "").strip(),
             "venue": str(venue).strip(),
             "year": year,
-            "citations": int(pub.get("num_citations") or 0),
-            "url": scholar_url_for_pub(user_id, pub),
+            "citations": int(pub_obj.get("num_citations") or pub.get("num_citations") or 0),
+            "url": scholar_url_for_pub(user_id, pub_obj),
         }
         result.append(item)
 
@@ -100,13 +176,13 @@ def fetch_publications(user_id: str) -> list:
     return result
 
 
-def fetch_with_retries(user_id: str, attempts: int, debug: bool) -> list:
+def fetch_with_retries(user_id: str, author_name: str, attempts: int, debug: bool) -> list:
     last_error = None
     for attempt in range(1, attempts + 1):
         try:
             if debug:
                 print(f"Fetch attempt {attempt}/{attempts}")
-            return fetch_publications(user_id)
+            return fetch_publications(user_id=user_id, author_name=author_name, debug=debug)
         except Exception as exc:  # noqa: BLE001
             last_error = exc
             if debug:
@@ -140,24 +216,35 @@ def write_output(items: list, note: str | None = None):
     OUTPUT_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
-def main() -> int:
-    try:
-        parser = argparse.ArgumentParser(description="Fetch publications from Google Scholar")
-        parser.add_argument("--debug", action="store_true", help="Print traceback details for fetch failures")
-        parser.add_argument(
-            "--strict",
-            action="store_true",
-            help="Fail with non-zero exit if Scholar is unavailable and no cache exists",
-        )
-        parser.add_argument("--attempts", type=int, default=3, help="Number of retry attempts (default: 3)")
-        args = parser.parse_args()
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="Fetch publications from Google Scholar")
+    parser.add_argument("--debug", action="store_true", help="Print traceback details for fetch failures")
+    parser.add_argument(
+        "--strict",
+        action="store_true",
+        help="Fail with non-zero exit if Scholar is unavailable and no cache exists",
+    )
+    parser.add_argument("--attempts", type=int, default=3, help="Number of retry attempts (default: 3)")
+    parser.add_argument(
+        "--no-proxy",
+        action="store_true",
+        help="Disable FreeProxies setup and fetch directly",
+    )
+    args = parser.parse_args(argv)
 
+    try:
         config = load_config()
         user_id = extract_user_id(config)
+        author_name = extract_author_name(config)
 
-        configure_proxy(debug=args.debug)
+        configure_proxy(debug=args.debug, use_proxy=not args.no_proxy)
 
-        items = fetch_with_retries(user_id=user_id, attempts=max(1, args.attempts), debug=args.debug)
+        items = fetch_with_retries(
+            user_id=user_id,
+            author_name=author_name,
+            attempts=max(1, args.attempts),
+            debug=args.debug,
+        )
     except Exception as exc:  # noqa: BLE001
         existing = load_existing()
         if existing.get("items"):
