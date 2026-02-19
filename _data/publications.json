@@ -1,4 +1,5 @@
 {
-  "generated_at": null,
+  "generated_at": "2026-02-19T19:45:26.688006+00:00",
+  "note": "Scholar fetch failed on cold start: Client.__init__() got an unexpected keyword argument 'proxies'",
   "items": []
 }
