@@ -1,0 +1,171 @@
+:root {
+  --bg: #f6f8fc;
+  --surface: #ffffff;
+  --ink: #1f2a37;
+  --muted: #526072;
+  --brand: #0052cc;
+  --brand-ink: #ffffff;
+  --line: #d8e0ea;
+  --radius: 18px;
+  --shadow: 0 12px 36px rgba(10, 30, 64, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 15% 10%, #d9ebff 0%, transparent 35%),
+    radial-gradient(circle at 85% 20%, #e4ffe2 0%, transparent 32%),
+    var(--bg);
+  line-height: 1.65;
+}
+
+a {
+  color: var(--brand);
+}
+
+.container {
+  width: min(1000px, 92vw);
+  margin: 0 auto;
+}
+
+.hero {
+  padding: 80px 0 54px;
+}
+
+.hero__content {
+  background: linear-gradient(140deg, #ffffff 0%, #f6fbff 70%);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 4px);
+  box-shadow: var(--shadow);
+  padding: 42px;
+  animation: rise 500ms ease-out;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  font-size: 0.74rem;
+}
+
+h1 {
+  margin: 8px 0 0;
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  line-height: 1.1;
+}
+
+.subtitle {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.lead {
+  margin-top: 22px;
+  font-size: 1.07rem;
+}
+
+.cta-row {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  padding: 9px 15px;
+  border-radius: 999px;
+  background: var(--brand);
+  color: var(--brand-ink);
+  font-weight: 600;
+  border: 1px solid var(--brand);
+}
+
+.button--ghost {
+  background: transparent;
+  color: var(--brand);
+}
+
+.main-grid {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 70px;
+}
+
+section {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: 1.34rem;
+}
+
+.section-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.muted {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.pub-list {
+  margin: 18px 0 0;
+  padding-left: 20px;
+}
+
+.pub-item + .pub-item {
+  margin-top: 18px;
+}
+
+.pub-item h3 {
+  margin: 0;
+  font-size: 1.06rem;
+}
+
+.pub-meta,
+.pub-cites {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    padding-top: 40px;
+  }
+
+  .hero__content,
+  section {
+    padding: 20px;
+  }
+}
