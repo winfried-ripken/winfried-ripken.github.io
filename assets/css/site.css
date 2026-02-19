@@ -47,6 +47,33 @@ a {
   animation: rise 500ms ease-out;
 }
 
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 28px;
+  align-items: center;
+}
+
+.profile-frame {
+  margin: 0;
+  justify-self: end;
+  width: 220px;
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+  padding: 8px;
+  background: linear-gradient(145deg, #fff, #ebf1fb);
+  border: 1px solid #cfd9ea;
+  box-shadow: 0 12px 28px rgba(24, 44, 84, 0.18);
+}
+
+.profile-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 11px;
+  display: block;
+}
+
 .eyebrow {
   margin: 0;
   text-transform: uppercase;
@@ -128,24 +155,67 @@ h2 {
 }
 
 .pub-list {
-  margin: 18px 0 0;
-  padding-left: 20px;
+  margin-top: 16px;
+}
+
+.year-heading {
+  margin: 20px 0 10px;
+  font-size: 1rem;
+  color: #304760;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pub-item {
+  border: 1px solid #dbe3ee;
+  background: #fbfdff;
+  border-radius: 14px;
+  padding: 15px 16px;
+  box-shadow: 0 4px 14px rgba(22, 47, 83, 0.06);
 }
 
 .pub-item + .pub-item {
-  margin-top: 18px;
+  margin-top: 12px;
 }
 
-.pub-item h3 {
+.pub-authors {
   margin: 0;
-  font-size: 1.06rem;
+  color: var(--muted);
+  font-size: 0.93rem;
 }
 
-.pub-meta,
-.pub-cites {
+.author-highlight {
+  color: #032b6a;
+  font-weight: 700;
+}
+
+.pub-title {
   margin: 6px 0 0;
-  color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.pub-meta-grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 8px 12px;
+}
+
+.pub-meta-grid p {
+  margin: 0;
+  color: #3f5268;
+  font-size: 0.9rem;
+}
+
+.meta-label {
+  display: inline-block;
+  margin-right: 8px;
+  color: #1d324a;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 @keyframes rise {
@@ -162,6 +232,15 @@ h2 {
 @media (max-width: 760px) {
   .hero {
     padding-top: 40px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-frame {
+    justify-self: start;
+    width: min(220px, 70%);
   }
 
   .hero__content,
