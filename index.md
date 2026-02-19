@@ -37,7 +37,7 @@ title: Home
       <p class="muted">
         Last update:
         {% if site.data.publications.generated_at %}
-          {{ site.data.publications.generated_at }}
+          {{ site.data.publications.generated_at | date: "%Y-%m-%d" }}
         {% else %}
           not yet synced
         {% endif %}
