@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-02-19T22:06:51.020330+00:00",
+  "generated_at": "2026-02-20T17:20:26.593138+00:00",
   "note": null,
   "items": [
     {
       "title": "Learning Hamiltonian Flow Maps: Mean Flow Consistency for Large-Timestep Molecular Dynamics",
-      "authors": "Winfried Ripken and Michael Plainer and Gregor Lied and Thorben Frank and Oliver T Unke and Stefan Chmiela and Frank Noé and Klaus Robert Müller",
+      "authors": "Winfried Ripken* and Michael Plainer* and Gregor Lied* and Thorben Frank* and Oliver T Unke and Stefan Chmiela and Frank Noé and Klaus Robert Müller",
       "venue": "arXiv preprint arXiv:2601.22123",
       "year": 2026,
       "citations": 0,
@@ -28,11 +28,11 @@
     },
     {
       "title": "Enhancing Diffusion Models Efficiency by Disentangling Total-Variance and Signal-to-Noise Ratio",
-      "authors": "Khaled Kahouli and Winfried Ripken and Stefan Gugler and Oliver T Unke and Klaus-Robert Müller and Shinichi Nakajima",
+      "authors": "",
       "venue": "arXiv preprint arXiv:2502.08598",
       "year": 2025,
       "citations": 0,
-      "url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250208598K/abstract"
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=wAVKdLcAAAAJ&citation_for_view=wAVKdLcAAAAJ:mB3voiENLucC"
     },
     {
       "title": "Enhancing Multi-Objective Optimization through Machine Learning-Supported Multiphysics Simulation",
@@ -44,11 +44,11 @@
     },
     {
       "title": "Curve Your Enthusiasm: Concurvity Regularization in Differentiable Generalized Additive Models",
-      "authors": "Julien Siems* and Konstantin Ditschuneit* and Winfried Ripken* and Alma Lindborg* and Maximilian Schambach and Johannes S Otterbach and Martin Genzel",
+      "authors": "",
       "venue": "Proceedings of NeurIPS 2023",
       "year": 2023,
       "citations": 20,
-      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/3c6696d70d364337cf98dcb7c652a770-Abstract-Conference.html"
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=wAVKdLcAAAAJ&citation_for_view=wAVKdLcAAAAJ:hC7cP41nSMkC"
     },
     {
       "title": "Multiscale Neural Operators for Solving Time-Independent PDEs",
@@ -100,11 +100,11 @@
     },
     {
       "title": "Maps for Learning Indexable Classes",
-      "authors": "Julian Berger and Maximilian Böther and Vanja Doskoč and Jonathan Gadea Harder and Nicolas Klodt and Timo Kötzing and Winfried Lötzsch and Jannik Peters and Leon Schiller and Lars Seifert and Armin Wells and Simon Wietheger",
+      "authors": "",
       "venue": "arXiv preprint arXiv:2010.09460",
       "year": 2020,
       "citations": 0,
-      "url": "https://arxiv.org/abs/2010.09460"
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=wAVKdLcAAAAJ&citation_for_view=wAVKdLcAAAAJ:mVmsd5A6BfQC"
     },
     {
       "title": "Using Deep Reinforcement Learning for the Continuous Control of Robotic Arms",
@@ -134,7 +134,7 @@
       "title": "Towards Learning Self-Organized Criticality of Rydberg Atoms using Graph Neural Networks",
       "authors": "Simon Ohler and Daniel Steven Brady and Winfried Lötzsch and Michael Fleischhauer and Johannes Otterbach",
       "venue": "ICML 2022 2nd AI for Science Workshop",
-      "year": 2022,
+      "year": 0,
       "citations": 1,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=wAVKdLcAAAAJ&citation_for_view=wAVKdLcAAAAJ:ZeXyd9-uunAC"
     }
