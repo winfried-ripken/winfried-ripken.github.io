@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-20T17:20:26.593138+00:00",
+  "generated_at": "2026-02-23T04:22:52.226523+00:00",
   "note": null,
   "items": [
     {
@@ -12,11 +12,11 @@
     },
     {
       "title": "Sampling 3D Molecular Conformers with Diffusion Transformers",
-      "authors": "J Thorben Frank* and Winfried Ripken* and Gregor Lied* and Klaus-Robert Müller and Oliver T Unke and Stefan Chmiela",
+      "authors": "",
       "venue": "Proceedings of NeurIPS 2025",
       "year": 2025,
       "citations": 0,
-      "url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250615378T/abstract"
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=wAVKdLcAAAAJ&citation_for_view=wAVKdLcAAAAJ:TQgYirikUcIC"
     },
     {
       "title": "Nonequilibrium universality of Rydberg-excitation spreading on a dynamic network",
@@ -28,11 +28,11 @@
     },
     {
       "title": "Enhancing Diffusion Models Efficiency by Disentangling Total-Variance and Signal-to-Noise Ratio",
-      "authors": "",
+      "authors": "Khaled Kahouli and Winfried Ripken and Stefan Gugler and Oliver T Unke and Klaus-Robert Müller and Shinichi Nakajima",
       "venue": "arXiv preprint arXiv:2502.08598",
       "year": 2025,
       "citations": 0,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=wAVKdLcAAAAJ&citation_for_view=wAVKdLcAAAAJ:mB3voiENLucC"
+      "url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250208598K/abstract"
     },
     {
       "title": "Enhancing Multi-Objective Optimization through Machine Learning-Supported Multiphysics Simulation",
@@ -44,11 +44,11 @@
     },
     {
       "title": "Curve Your Enthusiasm: Concurvity Regularization in Differentiable Generalized Additive Models",
-      "authors": "",
+      "authors": "Julien Siems* and Konstantin Ditschuneit* and Winfried Ripken* and Alma Lindborg* and Maximilian Schambach and Johannes S Otterbach and Martin Genzel",
       "venue": "Proceedings of NeurIPS 2023",
       "year": 2023,
       "citations": 20,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=wAVKdLcAAAAJ&citation_for_view=wAVKdLcAAAAJ:hC7cP41nSMkC"
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/3c6696d70d364337cf98dcb7c652a770-Abstract-Conference.html"
     },
     {
       "title": "Multiscale Neural Operators for Solving Time-Independent PDEs",
@@ -100,11 +100,11 @@
     },
     {
       "title": "Maps for Learning Indexable Classes",
-      "authors": "",
+      "authors": "Julian Berger and Maximilian Böther and Vanja Doskoč and Jonathan Gadea Harder and Nicolas Klodt and Timo Kötzing and Winfried Lötzsch and Jannik Peters and Leon Schiller and Lars Seifert and Armin Wells and Simon Wietheger",
       "venue": "arXiv preprint arXiv:2010.09460",
       "year": 2020,
       "citations": 0,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=wAVKdLcAAAAJ&citation_for_view=wAVKdLcAAAAJ:mVmsd5A6BfQC"
+      "url": "https://arxiv.org/abs/2010.09460"
     },
     {
       "title": "Using Deep Reinforcement Learning for the Continuous Control of Robotic Arms",
