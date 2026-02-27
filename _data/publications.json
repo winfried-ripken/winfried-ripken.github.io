@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-23T04:22:52.226523+00:00",
+  "generated_at": "2026-02-27T10:12:02.351904+00:00",
   "note": null,
   "items": [
     {
@@ -12,11 +12,11 @@
     },
     {
       "title": "Sampling 3D Molecular Conformers with Diffusion Transformers",
-      "authors": "",
+      "authors": "J Thorben Frank* and Winfried Ripken* and Gregor Lied* and Klaus-Robert Müller and Oliver T Unke and Stefan Chmiela",
       "venue": "Proceedings of NeurIPS 2025",
       "year": 2025,
       "citations": 0,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=wAVKdLcAAAAJ&citation_for_view=wAVKdLcAAAAJ:TQgYirikUcIC"
+      "url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250615378T/abstract"
     },
     {
       "title": "Nonequilibrium universality of Rydberg-excitation spreading on a dynamic network",
@@ -77,7 +77,7 @@
     {
       "title": "WISE: Whitebox Image Stylization by Example-Based Learning",
       "authors": "Winfried Lötzsch and Max Reimann and Martin Büssemeyer and Amir Semmo and Jürgen Döllner and Matthias Trapp",
-      "venue": "Springer Nature Switzerland",
+      "venue": "European Conference on Computer Vision (ECCV)",
       "year": 2022,
       "citations": 6,
       "url": "https://link.springer.com/chapter/10.1007/978-3-031-19790-1_9"
@@ -85,7 +85,7 @@
     {
       "title": "Learning languages with decidable hypotheses",
       "authors": "Julian Berger and Maximilian Böther and Vanja Doskoč and Jonathan Gadea Harder and Nicolas Klodt and Timo Kötzing and Winfried Lötzsch and Jannik Peters and Leon Schiller and Lars Seifert and Armin Wells and Simon Wietheger",
-      "venue": "Connecting with Computability: 17th Conference on Computability in Europe, CiE 2021, Virtual Event, Ghent, July 5–9, 2021, Proceedings 17",
+      "venue": "Connecting with Computability: 17th Conference on Computability in Europe, CiE 2021",
       "year": 2021,
       "citations": 1,
       "url": "https://link.springer.com/chapter/10.1007/978-3-030-80049-9_3"
@@ -109,7 +109,7 @@
     {
       "title": "Using Deep Reinforcement Learning for the Continuous Control of Robotic Arms",
       "authors": "Winfried Lötzsch",
-      "venue": "TU Chemnitz",
+      "venue": "Bachelor Thesis, University of Chemnitz",
       "year": 2018,
       "citations": 5,
       "url": "https://arxiv.org/abs/1810.06746"
@@ -125,7 +125,7 @@
     {
       "title": "Who wrote the web? Revisiting influential author identification research applicable to information retrieval",
       "authors": "Martin Potthast and Sarah Braun and Tolga Buz and Fabian Duffhauss and Florian Friedrich and Jörg Marvin Gülzow and Jakob Köhler and Winfried Lötzsch and Fabian Müller and Maike Elisa Müller and Robert Paßmann and Bernhard Reinke and Lucas Rettenmeier and Thomas Rometsch and Timo Sommer and Michael Träger and Sebastian Wilhelm and Benno Stein and Efstathios Stamatatos and Matthias Hagen",
-      "venue": "Advances in Information Retrieval: 38th European Conference on IR Research, ECIR 2016, Padua, Italy, March 20–23, 2016. Proceedings 38",
+      "venue": "Advances in Information Retrieval: 38th European Conference on IR Research",
       "year": 2016,
       "citations": 79,
       "url": "https://link.springer.com/chapter/10.1007/978-3-319-30671-1_29"
@@ -134,7 +134,7 @@
       "title": "Towards Learning Self-Organized Criticality of Rydberg Atoms using Graph Neural Networks",
       "authors": "Simon Ohler and Daniel Steven Brady and Winfried Lötzsch and Michael Fleischhauer and Johannes Otterbach",
       "venue": "ICML 2022 2nd AI for Science Workshop",
-      "year": 0,
+      "year": 2022,
       "citations": 1,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=wAVKdLcAAAAJ&citation_for_view=wAVKdLcAAAAJ:ZeXyd9-uunAC"
     }

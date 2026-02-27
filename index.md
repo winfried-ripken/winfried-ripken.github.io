@@ -76,7 +76,7 @@ title: Home
                 </h4>
                 <p class="pub-authors">{{ authors }}</p>
                 <p class="pub-venue">{{ pub.venue | default: "Unknown venue" }}</p>
-                <p class="pub-cites">{{ pub.citations | default: 0 }} citations</p>
+                <!-- <p class="pub-cites">{{ pub.citations | default: 0 }} citations</p> -->
               </article>
               {% endfor %}
             </div>
