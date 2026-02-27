@@ -158,6 +158,46 @@ h2 {
   margin-top: 16px;
 }
 
+.pub-filters {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: end;
+}
+
+.filter-field {
+  display: grid;
+  gap: 4px;
+  min-width: 140px;
+}
+
+.filter-field--search {
+  flex: 1 1 260px;
+}
+
+.filter-field span {
+  font-size: 0.82rem;
+  color: #465b73;
+  font-weight: 600;
+}
+
+.filter-field select,
+.filter-field input {
+  border: 1px solid #cfd9e7;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 8px 10px;
+  font: inherit;
+  color: var(--ink);
+}
+
+.filter-field select:focus,
+.filter-field input:focus {
+  outline: 2px solid rgba(0, 82, 204, 0.18);
+  border-color: #91afe0;
+}
+
 .year-heading {
   margin: 20px 0 10px;
   font-size: 1rem;
