@@ -163,7 +163,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 10px 14px;
-  align-items: end;
+  align-items: start;
 }
 
 .filter-field {
@@ -188,8 +188,14 @@ h2 {
   border-radius: 10px;
   background: #ffffff;
   padding: 8px 10px;
+  min-height: 40px;
   font: inherit;
+  line-height: 1.2;
   color: var(--ink);
+}
+
+#pub-filter-empty {
+  margin-top: 12px;
 }
 
 .filter-field select:focus,
