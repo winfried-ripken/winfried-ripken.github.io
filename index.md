@@ -18,6 +18,7 @@ title: Home
         <div class="cta-row">
           <a class="button" href="{{ site.author.scholar_url }}">Google Scholar</a>
           <a class="button button--ghost" href="{{ '/assets/CV_Ripken.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
+          <a class="button button--ghost" id="email-link" href="#" data-user-b64="d2luZnJpZWQucmlwa2Vu" data-domain-b64="Z21haWwuY29t">Email</a>
           <a class="button button--ghost" href="https://github.com/{{ site.author.github }}">GitHub</a>
           {% if site.author.twitter %}
           <a class="button button--ghost" href="https://x.com/{{ site.author.twitter }}">X/Twitter</a>
@@ -108,10 +109,21 @@ title: Home
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    var emailLink = document.getElementById("email-link");
     var yearFilter = document.getElementById("year-filter");
     var textFilter = document.getElementById("text-filter");
     var emptyState = document.getElementById("pub-filter-empty");
     var groups = document.querySelectorAll(".year-block");
+
+    if (emailLink) {
+      var user = atob(emailLink.dataset.userB64 || "");
+      var domain = atob(emailLink.dataset.domainB64 || "");
+      if (user && domain) {
+        emailLink.href = "mailto:" + user + "@" + domain;
+      } else {
+        emailLink.remove();
+      }
+    }
 
     if (!yearFilter || !textFilter || !groups.length) {
       return;
