@@ -1,21 +1,29 @@
 {
-  "generated_at": "2026-02-27T10:12:02.351904+00:00",
+  "generated_at": "2026-08-21T11:29:49.165760+00:00",
   "note": null,
   "items": [
     {
       "title": "Learning Hamiltonian Flow Maps: Mean Flow Consistency for Large-Timestep Molecular Dynamics",
       "authors": "Winfried Ripken* and Michael Plainer* and Gregor Lied* and Thorben Frank* and Oliver T Unke and Stefan Chmiela and Frank Noé and Klaus Robert Müller",
-      "venue": "arXiv preprint arXiv:2601.22123",
+      "venue": "ICML 2026 Spotlight",
+      "year": 2026,
+      "citations": 1,
+      "url": "https://arxiv.org/abs/2601.22123"
+    },
+    {
+      "title": "Implicit Machine Learning Force Fields Accelerate Molecular Dynamics Simulations",
+      "authors": "Johannes Maeß and Leon Werner and J Thorben Frank and Winfried Ripken and Martin Michajlow and Joshua Futterer and Klaus-Robert Müller and Stefan Chmiela",
+      "venue": "arXiv preprint arXiv:2607.29158",
       "year": 2026,
       "citations": 0,
-      "url": "https://arxiv.org/abs/2601.22123"
+      "url": "https://arxiv.org/abs/2607.29158"
     },
     {
       "title": "Sampling 3D Molecular Conformers with Diffusion Transformers",
       "authors": "J Thorben Frank* and Winfried Ripken* and Gregor Lied* and Klaus-Robert Müller and Oliver T Unke and Stefan Chmiela",
       "venue": "Proceedings of NeurIPS 2025",
       "year": 2025,
-      "citations": 0,
+      "citations": 4,
       "url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250615378T/abstract"
     },
     {
@@ -23,23 +31,23 @@
       "authors": "Simon Ohler and Daniel Brady and Patrick Mischke and Jana Bender and Herwig Ott and Thomas Niederprüm and Winfried Ripken and Johannes S Otterbach and Michael Fleischhauer",
       "venue": "Physical Review Research",
       "year": 2025,
-      "citations": 0,
+      "citations": 3,
       "url": "https://link.aps.org/doi/10.1103/8rlg-169g"
     },
     {
-      "title": "Enhancing Diffusion Models Efficiency by Disentangling Total-Variance and Signal-to-Noise Ratio",
+      "title": "Disentangling Total-Variance and Signal-to-Noise-Ratio Improves Diffusion Models",
       "authors": "Khaled Kahouli and Winfried Ripken and Stefan Gugler and Oliver T Unke and Klaus-Robert Müller and Shinichi Nakajima",
       "venue": "arXiv preprint arXiv:2502.08598",
       "year": 2025,
-      "citations": 0,
-      "url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250208598K/abstract"
+      "citations": 2,
+      "url": "https://arxiv.org/abs/2502.08598"
     },
     {
       "title": "Enhancing Multi-Objective Optimization through Machine Learning-Supported Multiphysics Simulation",
       "authors": "Diego Botache and Jens Decke and Winfried Ripken and Abhinay Dornipati and Franz Götz-Hahn and Mohamed Ayeb and Bernhard Sick",
       "venue": "Proceedings of ECML 2024",
       "year": 2024,
-      "citations": 12,
+      "citations": 14,
       "url": "https://link.springer.com/chapter/10.1007/978-3-031-70381-2_19"
     },
     {
@@ -47,7 +55,7 @@
       "authors": "Julien Siems* and Konstantin Ditschuneit* and Winfried Ripken* and Alma Lindborg* and Maximilian Schambach and Johannes S Otterbach and Martin Genzel",
       "venue": "Proceedings of NeurIPS 2023",
       "year": 2023,
-      "citations": 20,
+      "citations": 25,
       "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/3c6696d70d364337cf98dcb7c652a770-Abstract-Conference.html"
     },
     {
@@ -55,7 +63,7 @@
       "authors": "Winfried Ripken* and Lisa Coiffard* and Felix Pieper* and Sebastian Dziadzio",
       "venue": "NeurIPS 2023 Workshop on the Symbiosis of Deep Learning and Differential Equations III",
       "year": 2023,
-      "citations": 8,
+      "citations": 9,
       "url": "https://arxiv.org/abs/2311.05964"
     },
     {
@@ -71,21 +79,29 @@
       "authors": "Winfried Lötzsch and Simon Ohler and Johannes Otterbach",
       "venue": "ICML 2022 2nd AI for Science Workshop",
       "year": 2022,
-      "citations": 28,
+      "citations": 31,
       "url": "https://arxiv.org/abs/2206.14092"
     },
     {
       "title": "WISE: Whitebox Image Stylization by Example-Based Learning",
       "authors": "Winfried Lötzsch and Max Reimann and Martin Büssemeyer and Amir Semmo and Jürgen Döllner and Matthias Trapp",
-      "venue": "European Conference on Computer Vision (ECCV)",
+      "venue": "Springer Nature Switzerland",
       "year": 2022,
-      "citations": 6,
+      "citations": 7,
       "url": "https://link.springer.com/chapter/10.1007/978-3-031-19790-1_9"
+    },
+    {
+      "title": "Towards Learning Self-Organized Criticality of Rydberg Atoms using Graph Neural Networks",
+      "authors": "Simon Ohler and Daniel Steven Brady and Winfried Lötzsch and Michael Fleischhauer and Johannes Otterbach",
+      "venue": "ICML 2022 2nd AI for Science Workshop",
+      "year": 2022,
+      "citations": 1,
+      "url": "https://arxiv.org/abs/2207.08927"
     },
     {
       "title": "Learning languages with decidable hypotheses",
       "authors": "Julian Berger and Maximilian Böther and Vanja Doskoč and Jonathan Gadea Harder and Nicolas Klodt and Timo Kötzing and Winfried Lötzsch and Jannik Peters and Leon Schiller and Lars Seifert and Armin Wells and Simon Wietheger",
-      "venue": "Connecting with Computability: 17th Conference on Computability in Europe, CiE 2021",
+      "venue": "Connecting with Computability: 17th Conference on Computability in Europe, CiE 2021, Virtual Event, Ghent, July 5–9, 2021, Proceedings 17",
       "year": 2021,
       "citations": 1,
       "url": "https://link.springer.com/chapter/10.1007/978-3-030-80049-9_3"
@@ -95,8 +111,8 @@
       "authors": "Aiham Taleb and Winfried Loetzsch and Noel Danz and Julius Severin and Thomas Gaertner and Benjamin Bergner and Christoph Lippert",
       "venue": "Proceedings of NeurIPS 2020",
       "year": 2020,
-      "citations": 331,
-      "url": "https://proceedings.neurips.cc/paper/2020/hash/d2dc6368837861b42020ee72b0896182-Abstract.html"
+      "citations": 366,
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2020/hash/d2dc6368837861b42020ee72b0896182-Abstract.html"
     },
     {
       "title": "Maps for Learning Indexable Classes",
@@ -109,7 +125,7 @@
     {
       "title": "Using Deep Reinforcement Learning for the Continuous Control of Robotic Arms",
       "authors": "Winfried Lötzsch",
-      "venue": "Bachelor Thesis, University of Chemnitz",
+      "venue": "TU Chemnitz",
       "year": 2018,
       "citations": 5,
       "url": "https://arxiv.org/abs/1810.06746"
@@ -125,18 +141,10 @@
     {
       "title": "Who wrote the web? Revisiting influential author identification research applicable to information retrieval",
       "authors": "Martin Potthast and Sarah Braun and Tolga Buz and Fabian Duffhauss and Florian Friedrich and Jörg Marvin Gülzow and Jakob Köhler and Winfried Lötzsch and Fabian Müller and Maike Elisa Müller and Robert Paßmann and Bernhard Reinke and Lucas Rettenmeier and Thomas Rometsch and Timo Sommer and Michael Träger and Sebastian Wilhelm and Benno Stein and Efstathios Stamatatos and Matthias Hagen",
-      "venue": "Advances in Information Retrieval: 38th European Conference on IR Research",
+      "venue": "Advances in Information Retrieval: 38th European Conference on IR Research, ECIR 2016, Padua, Italy, March 20–23, 2016. Proceedings 38",
       "year": 2016,
-      "citations": 79,
+      "citations": 82,
       "url": "https://link.springer.com/chapter/10.1007/978-3-319-30671-1_29"
-    },
-    {
-      "title": "Towards Learning Self-Organized Criticality of Rydberg Atoms using Graph Neural Networks",
-      "authors": "Simon Ohler and Daniel Steven Brady and Winfried Lötzsch and Michael Fleischhauer and Johannes Otterbach",
-      "venue": "ICML 2022 2nd AI for Science Workshop",
-      "year": 2022,
-      "citations": 1,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=wAVKdLcAAAAJ&citation_for_view=wAVKdLcAAAAJ:ZeXyd9-uunAC"
     }
   ]
 }
